@@ -1,0 +1,156 @@
+/* CSS2
+* $Id: default.css,v 1.2 2002/11/16 16:02:01 fumiya Exp $
+* ====================================================================== */
+
+html {
+  margin:		0px 0px 0px 0px;
+  padding:		0px 0px 0px 0px;
+}
+
+body {
+  margin:		0px 1em 0px 1em;
+  padding:		0px 0px 0px 0px;
+  background-color:	white;
+  color:		black;
+}
+
+h1 {
+  margin:		0.2em 0px 0px 0px;
+  border-bottom:	solid 2px #004444;
+  padding-left:		1em;
+  padding-top:		0.2em;
+  padding-bottom:	0.2em;
+  font-size:		170%;
+  text-align:		center;
+}
+
+h2 {
+  border-right:		solid 1px #90B060;
+  border-bottom:	solid 1px #90B060;
+  padding:		0.2em;
+  font-size:		130%;
+  font-weight:		bold;
+  /* http://cyokodog.web.fc2.com/cyokolab/html/gradient_css_generator.html */
+  filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#A0E0E0,EndColorStr=#F0FFFF);
+  background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAwCAYAAADQMxCBAAAAwklEQVQImQXBASsDAQCA0e///wqJRCKRSCQSiUQikW6329222+12u9t2btt93mMjCGQzCGSr05HtMJSdMJTdblf2okj2o0gOej05jGM5imM5ThI5SRI57fflbDCQ88FALoZDuUxTuUpTuR6N5CbL5DbL5G48lvs8l4c8l8fJRJ6KQp6LQl6mU3ktS3krS3mvKvmoKvmczeRrPpfv+Vx+Fgv5rWsJ6lo6f3/SbRrpNY3Ey6X0VysZrlaSrteSta3kbes/06mu1Tsl51cAAAAASUVORK5CYII=");
+  background-repeat:repeat-x;
+  background-color:#F0FFFF;
+}
+h3 {
+  border-bottom:	solid #004444 1px;
+  padding-left:		3pt;
+  font-size:		130%;
+}
+h4 {
+  margin-left:		0.2em;
+  margin-right:		0.2em;
+  border-left:		solid 1em #000090;
+  padding-left:		0.2em;
+  font-size:		110%;
+}
+h5 {
+  font-size:		110%;
+}
+h6 {
+  font-size:		100%;
+}
+
+p {
+  margin-bottom:	0.5em;
+  margin-left:		0.5em;
+  margin-right:		0.5em;
+}
+ul {
+  margin:		0.5em 1em 0.5em 1em;
+}
+
+dl {
+  margin:		0.5em 1em 0.5em 1em;
+}
+dl dt {
+  margin-top:		0.3em;
+  font-weight:	bold
+}
+dl dd {
+  margin-bottom:	1px;
+  border-right:		solid 1px #CCCCCC;
+  border-bottom:	solid 1px #CCCCCC;
+}
+dl dd dl dd {
+  margin-bottom:	1px;
+  border-right:		solid 1px transparent;
+  border-bottom:	solid 1px transparent;
+}
+
+/* Anchor
+* ---------------------------------------------------------------------- */
+
+a[id]:hover, a[name]:hover {
+  background-color:	transparent;
+  color:		black;
+  text-decoration:	none;
+}
+a[id]:active, a[name]:active {
+  background-color:	transparent;
+  color:		black;
+  text-decoration:	none
+}
+
+a:link {
+  background-color:	transparent;
+  color:		#0000FF;
+  text-decoration:	none;
+}
+a:visited {
+  background-color:	transparent;
+  color:		#000080;
+  text-decoration:	none;
+}
+a:hover {
+  background-color:	#FFFF00;
+  color:		#0000FF;
+  text-decoration:	underline;
+};
+a:active {
+  background-color:	transparent;
+  color:		#0000FF;
+  text-decoration:	none;
+}
+
+/* Common class
+* ---------------------------------------------------------------------- */
+
+.nowrap {
+  white-space:		nowrap;
+}
+
+/* 
+* ---------------------------------------------------------------------- */
+
+pre {
+  overflow:		auto;
+  margin:		0.2em 2em 1em 2em;
+  border:		solid 1px black;
+  border-right-width:	2px;
+  border-bottom-width:	2px;
+  width:		auto;
+  padding:		5px;
+  color:		black;
+  background-color:	#F0F0F0;
+  font-size:		small;
+  line-height:		1.1em;
+  white-space:		pre;
+}
+
+table tbody tr th {
+  color:		black;
+  background-color:	#C0C0C0;
+  text-align:		left;
+  font-weight:		bold;
+}
+table tbody tr td {
+  border-color:		#A0A0A0;
+  border-bottom-style:	solid;
+  border-bottom-width:	1px;
+}
+
