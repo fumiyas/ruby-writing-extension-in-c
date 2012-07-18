@@ -37,6 +37,38 @@ Ruby 1.9.3 を元に書いていますが、Ruby 1.8 系でも参考になるか
 原書の最新のソース:
 <http://github.com/karlseguin/the-little-mongodb-book>
 
+## ソースツリー環境の構築
+
+Ruby Bundler を利用して雛形を作る手順。
+
+### Bundler のインストール
+
+gem コマンドでインストールする場合:
+
+	# gem install bundler
+
+Debian で標準パッケージをインストールする場合:
+
+	# apt-get install bundler
+
+Ubuntu で標準パッケージ (universe) をインストールする場合:
+
+	# apt-get install ruby-bundler
+
+### Bundler によるソースツリー雛形の作成
+
+	$ bundle gem example
+	      create  example/Gemfile
+	      create  example/Rakefile
+	      create  example/LICENSE
+	      create  example/README.md
+	      create  example/.gitignore
+	      create  example/example.gemspec
+	      create  example/lib/example.rb
+	      create  example/lib/example/version.rb
+	Initializating git repo in /home/fumiyas/git/example
+
+
 ## 基本
 
 Ruby のデータやコードはすべてオブジェクトが保持している。
@@ -71,7 +103,7 @@ C の `off_t` 等の整数に対応する整数オブジェクト生成マクロ
 
 Linux の AMD64/Intel64 環境など、C で `sizeof(int) < sizeof(long)` と
 なる環境で、かつ整数値が `int` の範囲であれば、`*2FIX()` を利用したほうが
-効率がよい。__注意: 桁溢れしても例外は上がらない__。
+効率がよい。__注意: 桁溢れしても例外は上がらず、壊れた値になる__。
 
 	/* 整数から整数オブジェクト Fixnum を生成 */
 	VALUE fixnum_obj1 = INT2FIX(123);
@@ -104,15 +136,4 @@ FIXME: 文字エンコーディング関連の説明
 	VALUE enc_class = rb_path_to_class(enc_classname_obj);
 
 ## クラスのオブジェクトの生成とメソッド呼び出し
-
-## ソースツリー/ファイル構成
-
-Ruby Gem 対応のソースツリー構成。
-
-### ファイル構成
-
-Gemfile
-\*.gemspec
-Rakefile
-extconf.rb
 
