@@ -1,8 +1,8 @@
-MARKDOWN2HTML=	markdown_py --extension=extra --output_format=html5
+MD2HTML=	markdown_py --extension=extra --output_format=html5
 
-FNAME_SRC=	ruby-writing-extension-in-c.markdown
+MD_FILES=	ruby-writing-extension-in-c.markdown
 
-BUILD_TARGETS=	$(FNAME_SRC:.markdown=.html)
+BUILD_TARGETS=	$(MD_FILES:.markdown=.html)
 
 .SUFFIXES: .markdown .html
 
@@ -18,7 +18,7 @@ BUILD_TARGETS=	$(FNAME_SRC:.markdown=.html)
 	  echo '<ul>'`sed -n '2,/^$$/s!^% *\(.*\)!<li>\1</li>!p' $<`; \
 	  echo '<li>'`date +'%Y-%m-%d %H:%M:%S %z (%Z)'`'</li></ul>'; \
 	) >>$@.tmp
-	@sed '1,/^$$/d' $< |$(MARKDOWN2HTML) >>$@.tmp
+	@sed '1,/^$$/d' $< |$(MD2HTML) >>$@.tmp
 	@( \
 	  echo; \
 	  echo '</body></html>'; \
