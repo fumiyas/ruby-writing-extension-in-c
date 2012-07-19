@@ -68,7 +68,6 @@ Ubuntu で標準パッケージ (universe) をインストールする場合:
 	      create  example/lib/example/version.rb
 	Initializating git repo in /home/fumiyas/git/example
 
-
 ## 基本
 
 Ruby のデータやコードはすべてオブジェクトが保持している。
@@ -93,21 +92,21 @@ C の `int`, `long` から Ruby の `Integer` オブジェクトを生成する�
 C の `off_t` 等の整数に対応する整数オブジェクト生成マクロも用意されている。
 
 	/* そのほかの整数型から整数オブジェクト Integer を生成 */
-	VALUE off_t_value = OFFT2NUM(off_t 型);
-	VALUE size_t_value = SIZET2NUM(size_t 型);
-	VALUE ssize_t_value = SSIZET2NUM(ssize_t 型);
-	VALUE pid_t = PIDT2NUM(pid_t 型);
-	VALUE uid_t_value = UIDT2NUM(uid_t 型);
-	VALUE gid_t = GIDT2NUM(gid_t 型);
-	VALUE mode_t = MODET2NUM(mode_t 型);
+	VALUE offset_obj = OFFT2NUM(off_t 型);
+	VALUE size_obj = SIZET2NUM(size_t 型);
+	VALUE ssize_obj = SSIZET2NUM(ssize_t 型);
+	VALUE pid_obj = PIDT2NUM(pid_t 型);
+	VALUE uid_obj = UIDT2NUM(uid_t 型);
+	VALUE gid_obj = GIDT2NUM(gid_t 型);
+	VALUE mode_obj = MODET2NUM(mode_t 型);
 
 Linux の AMD64/Intel64 環境など、C で `sizeof(int) < sizeof(long)` と
 なる環境で、かつ整数値が `int` の範囲であれば、`*2FIX()` を利用したほうが
 効率がよい。__注意: 桁溢れしても例外は上がらず、壊れた値になる__。
 
 	/* 整数から整数オブジェクト Fixnum を生成 */
-	VALUE fixnum_obj1 = INT2FIX(123);
-	VALUE fixnum_obj2 = LONG2FIX(45678910L);
+	VALUE fixnum_obj1 = INT2FIX(int 型);
+	VALUE fixnum_obj2 = LONG2FIX(long 型);
 
 ### C 文字列から Ruby `String` オブジェクトの生成
 
