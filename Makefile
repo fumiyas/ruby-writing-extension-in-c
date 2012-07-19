@@ -7,7 +7,7 @@ BUILD_TARGETS=	$(MD_FILES:.markdown=.html)
 .SUFFIXES: .markdown .html
 
 .markdown.html:
-	@echo "Building $@ from $<..."
+	@echo "Building $@ ..."
 	@rm -f $@.tmp
 	@( \
 	  echo '<html><head>'; \

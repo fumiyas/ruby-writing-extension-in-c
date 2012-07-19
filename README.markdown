@@ -23,3 +23,6 @@ UNIX 環境で `make` コマンドと
 HTML ファイルを生成することもできます。
 PDF などそのほかのフォーマットは準備中です。
 
+	$ make
+	Building ruby-writing-extension-in-c.html ...
+
