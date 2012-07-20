@@ -18,8 +18,8 @@ Ruby 1.9.3 を元に書いていますが、Ruby 1.8 系でも参考になるか
 記法で書かれています。
 
 UNIX 環境で `make` コマンドと
-[python-markdown](http://www.freewisdom.org/projects/python-markdown/)
-の `markdown_py` コマンドが利用可能であれば、
+[Pandoc](http://johnmacfarlane.net/pandoc/)
+の `pandoc` コマンドが利用可能であれば、
 HTML ファイルを生成することもできます。
 PDF などそのほかのフォーマットは準備中です。
 

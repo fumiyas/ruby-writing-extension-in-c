@@ -1,7 +1,6 @@
 % Ruby の拡張を C 言語で書くための薄い本
-% 佐藤 文優 著
-% Copyright: (c) 2012 SATOH Fumiyasu @ OSS Technology Corp., Japan
-% License: Attribution-NonCommercial 3.0 Unported
+% [佐藤 文優](https://twitter.com/satoh_fumiyasu) 著
+  Copyright: (c) 2012 SATOH Fumiyasu @ OSS Technology Corp., Japan
 
 ## この本について
 
