@@ -50,15 +50,15 @@ Ruby Bundler を利用して雛形を作る手順。
 
 ### Bundler と Rake-compiler のインストール
 
-gem コマンドでインストールする場合:
+Gem をインストールする場合:
 
 	# gem install bundler rake-compiler
 
-Debian GNU/Linux wheezy で標準パッケージをインストールする場合:
+Debian GNU/Linux wheezy の場合 (標準パッケージ):
 
 	# apt-get install bundler rake-compiler
 
-Ubuntu 12.04 で標準パッケージをインストールする場合 (ただし ruby-bundler は universe。rake-compile はパッケージがないので Gem を入れる):
+Ubuntu 12.04 の場合 (ただし ruby-bundler は universe。rake-compiler はパッケージがないので Gem を入れる):
 
 	# apt-get install ruby-bundler
 	# gem install rake-compiler
