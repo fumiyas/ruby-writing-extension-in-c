@@ -36,6 +36,14 @@ Ruby 1.9.3 を元に書いていますが、Ruby 1.8 系でも参考になるか
 原書の最新のソース:
 <http://github.com/karlseguin/the-little-mongodb-book>
 
+### 参考文献
+
+  * Rubyソースコード完全解説
+    + <http://i.loveruby.net/ja/rhg/book/>
+    + 書籍『Rubyソースコード完全解説』の HTML 版
+  * bundlerでgemを作ってみる - Jewel-mmo開発日記
+    + <http://dgames.jp/dan/20110619>
+
 ## ソースツリー環境の構築
 
 Ruby Bundler を利用して雛形を作る手順。
