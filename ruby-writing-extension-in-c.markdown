@@ -48,7 +48,7 @@ Ruby 1.9.3 を元に書いていますが、Ruby 1.8 系でも参考になるか
 
 Ruby Bundler を利用して雛形を作る手順。
 
-### Bundler と Rake-compiler のインストール
+### Bundler と Rake Compiler のインストール
 
 Gem をインストールする場合:
 
@@ -58,7 +58,7 @@ Debian GNU/Linux wheezy の場合 (標準パッケージ):
 
 	# apt-get install bundler rake-compiler
 
-Ubuntu 12.04 の場合 (ただし ruby-bundler は universe。rake-compiler はパッケージがないので Gem を入れる):
+Ubuntu 12.04 の場合 (ただし `ruby-bundler` は universe。`rake-compiler` はパッケージがないので Gem を入れる):
 
 	# apt-get install ruby-bundler
 	# gem install rake-compiler
@@ -78,24 +78,36 @@ Ubuntu 12.04 の場合 (ただし ruby-bundler は universe。rake-compiler は�
 
 ### C をコンパイルする環境の構築
 
-C のソースツリーを作成:
+C のソースツリーを作成する。C のソースは、とりあえずダミーの空ファイルにしておく。
 
 	$ mkdir -p ext/example
 	$ touch ext/example/example.c
 
+`extconf.rb` ファイルを作成する。このファイルにより、
 C のソースからバイナリーをコンパイルするための `Makefile`
-を生成するための `extconf.rb` ファイルを作成:
+が生成される。内容は以下の通り。
 
-	$ echo "# -*- encoding: utf-8 -*-" >ext/example/extconf.rb
-	$ echo "require 'mkmf'" >>ext/example/extconf.rb
-	$ echo "dir_config 'example'" >>ext/example/extconf.rb
-	$ echo "create_makefile 'example'" >>ext/example/extconf.rb
+	require 'mkmf'
 
-rake-compiler の `Rake::ExtensionTask` を利用したタスクを `Rakefile` に追加:
+	dir_config 'example'
+	create_makefile 'example'
 
-	$ echo "require 'rake/clean'" >>Rakefile
-	$ echo "require 'rake/extensiontask'" >>Rakefile
-	$ echo "Rake::ExtensionTask.new(GEMSPEC.name, GEMSPEC)" >>Rakefile
+`Rakefile` を編集し、`*.gemspec` ファイル内で定義されている
+`Gem::Specification` を参照するために `bundler/gem_tasks` から
+`bundler/gem_helper` を利用するための変更を加え、
+Rake 付属の `rake/clean` と Rake Compiler の `rake/extensiontask`
+を利用したタスクをに追加する。変更後の `Rakefile` の内容は以下の通り:
+
+	#!/usr/bin/env rake
+	require "bundler/gem_helper"
+	require 'rake/clean'
+	require 'rake/extensiontask'
+
+	gem_helper = Bundler::GemHelper.new(Dir.pwd)
+	gem_helper.install
+	gem_spec = gem_helper.gemspec
+
+	Rake::ExtensionTask.new(gem_spec.name, gem_spec)
 
 ## 基本
 
