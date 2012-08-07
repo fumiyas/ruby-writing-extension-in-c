@@ -40,7 +40,12 @@ Ruby 1.9.3 を元に書いていますが、Ruby 1.8 系でも参考になるか
 
   * Rubyソースコード完全解説
     + <http://i.loveruby.net/ja/rhg/book/>
-    + 書籍『Rubyソースコード完全解説』の HTML 版
+    + 書籍『Rubyソースコード完全解説』の HTML 版 (2002年)
+    + Ruby 1.7.3
+  * Ruby マスターへの道
+    + 第1回 拡張ライブラリの作成(1): <http://shugo.net/article/cmagazine/1st/>
+    + 第2回 拡張ライブラリの作成(2): <http://shugo.net/article/cmagazine/2nd/>
+    + C Magazine の記事 (2001年)
   * bundlerでgemを作ってみる - Jewel-mmo開発日記
     + <http://dgames.jp/dan/20110619>
 
