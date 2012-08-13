@@ -11,8 +11,8 @@ Ruby 1.9.3 を元に書いていますが、Ruby 1.8 系でも参考になるか
 まだ書き始めたばかりです。いまのところ永遠に未完成の予定です。
 主に「Pure Ruby のあのコードを C でどうやって書けばいいのか」といった観点から書くつもりです。
 
-最新のソース:
-<https://github.com/fumiyas/ruby-writing-extension-in-c>
+  * 最新のソース:
+    + <https://github.com/fumiyas/ruby-writing-extension-in-c>
 
 ### ライセンス
 
@@ -24,17 +24,17 @@ Ruby 1.9.3 を元に書いていますが、Ruby 1.8 系でも参考になるか
 そして私はこれを商用目的で使用する事はありません。
 以下にライセンスの全文があります:
 
-<http://creativecommons.org/licenses/by-nc/3.0/legalcode>
+  * Attribution-NonCommercial 3.0 Unported
+    + <http://creativecommons.org/licenses/by-nc/3.0/legalcode>
 
 ### 謝辞
 
 「MongoDB の薄い本」を参考にさせてもらっています。ありがとう!
 
-翻訳版の最新のソース:
-<http://github.com/hamano/the-little-mongodb-book>
-
-原書の最新のソース:
-<http://github.com/karlseguin/the-little-mongodb-book>
+  * 翻訳版の最新のソース
+    + <http://github.com/hamano/the-little-mongodb-book>
+  * 原書の最新のソース
+    + <http://github.com/karlseguin/the-little-mongodb-book>
 
 ### 参考文献
 
@@ -48,6 +48,9 @@ Ruby 1.9.3 を元に書いていますが、Ruby 1.8 系でも参考になるか
     + C Magazine の記事 (2001年)
   * bundlerでgemを作ってみる - Jewel-mmo開発日記
     + <http://dgames.jp/dan/20110619>
+  * Rubyのエンコーディング - @tmtms のメモ
+    + <http://d.hatena.ne.jp/tmtms/touch/20120812/ruby_encoding>
+    + Ruby 1.9 の文字エンコーディングの話
 
 ## ソースツリー環境の構築
 
