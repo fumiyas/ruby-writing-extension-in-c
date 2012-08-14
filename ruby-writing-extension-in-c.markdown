@@ -84,14 +84,14 @@ Ubuntu 12.04 の場合 (ただし `ruby-bundler` は universe。`rake-compiler` 
 	      create  example/lib/example/version.rb
 	Initializating git repo in /home/fumiyas/git/example
 
-### C をコンパイルする環境の構築
+### C コンパイル環境の構築
 
-C のソースツリーを作成する。C のソースは、とりあえずダミーの空ファイルにしておく。
+`ext/example` 下に C のソースツリーを作成する。C のソースは、とりあえずダミーの空ファイルにしておく。
 
 	$ mkdir -p ext/example
 	$ touch ext/example/example.c
 
-`extconf.rb` ファイルを作成する。このファイルにより、
+`ext/example/extconf.rb` ファイルを作成する。このファイルにより、
 C のソースからバイナリーをコンパイルするための `Makefile`
 が生成される。内容は以下の通り。
 
@@ -100,21 +100,32 @@ C のソースからバイナリーをコンパイルするための `Makefile`
 	dir_config 'example'
 	create_makefile 'example'
 
-`Rakefile` を編集し、`*.gemspec` ファイル内で定義されている
-`Gem::Specification` を参照するために `bundler/gem_tasks` から
-`bundler/gem_helper` を利用するための変更を加え、
-Rake 付属の `rake/clean` と Rake Compiler の `rake/extensiontask`
-を利用したタスクをに追加する。変更後の `Rakefile` の内容は以下の通り:
+`Rakefile` を編集する。変更内容と目的は以下の通り。
+
+  * Bundler の `bundler/gem_tasks` を `bundler/gem_helper` (`Bundler::GemHelper`) に変更。
+    + `*.gemspec` ファイル内で定義されている `Gem::Specification` を参照するため。
+  * Rake の `rake/clean` を使用。
+    + ソースツリーを掃除する `clean`, `clobber` タスクを追加するため。
+  * Rake の `rake/test` (`Rake::TestTask`) を使用。
+    + テストを実行する `test` タスクを追加するため。
+  * Rake Compiler の `rake/extensiontask` (`Rake::ExtensionTask`) を使用。
+    + C ソースからバイナリーをコンパイルする `compile`, `compile:拡張名` タスクを追加するため。
+
+変更後の `Rakefile` の内容は以下の通り。
 
 	#!/usr/bin/env rake
-	require "bundler/gem_helper"
-	require 'rake/clean'
-	require 'rake/extensiontask'
 
+	require "bundler/gem_helper"
 	gem_helper = Bundler::GemHelper.new(Dir.pwd)
 	gem_helper.install
 	gem_spec = gem_helper.gemspec
 
+	require 'rake/clean'
+
+	require 'rake/testtask'
+	Rake::TestTask.new
+
+	require 'rake/extensiontask'
 	Rake::ExtensionTask.new(gem_spec.name, gem_spec)
 
 ## 基本
